@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create product</title>
-</head>
+@extends('layouts.home')
+@section('content')
+
 <body>
     <a href={{ route('product.index')}}>volver</a>
     <h1>agregar productos</h1>
@@ -16,5 +11,5 @@
         <input type="number" name="price" placeholder="price"/>     
         <input type="submit" value="agregar producto" /> 
     </form>
-</body>
-</html>
+    
+@endsection
