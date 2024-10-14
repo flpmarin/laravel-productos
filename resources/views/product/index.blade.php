@@ -7,19 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Productos</h3>
-    <form action="{{ route('store')}}" method="post">
-        @csrf
-        <input type="text" name="name" placeholder="name"/>
-        <input type="text" name="description" placeholder="description"/>
-        <input type="number" name="price" placeholder="price"/>     
-        <input type="submit" value="agregar producto" /> 
-    </form>
+    <a href="/create">agregar productos</a>
 
     <h1>Productos:</h1>
     <ul>
         @forelse ($products as $product)
-        <li>{{ $product->name }}</li>
+            <li>
+                Nombre: {{ $product->name }}<br>
+                Descripción: {{ $product->description }}<br>
+                Precio: {{ $product->price }}
+
+                <form action="{{ route ('product.destroy', $product->id)}}" method="post">
+                    @method("DELETE")
+                    @csrf
+                    <input type="submit" value="🗑️" />
+                </form>
+            </li>
         @empty
         <li>No data</li>
         @endforelse

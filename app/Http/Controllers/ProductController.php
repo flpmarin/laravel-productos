@@ -14,14 +14,20 @@ class ProductController extends Controller
         return view('product.index',compact('products'));
     }
 
-    public function create() 
+    public function create()
     {
-        return view(('product.index'));
+        return view(('product.create'));
     }
 
     public function store(Request $request)
     {
         Product::create($request->all());
-        return redirect()->route ('index');
+        return redirect()->route ('product.index');
+    }
+
+    public function destroy(Request $request, Product $product)
+    {
+        $product->delete();
+        return redirect()->route ('product.index');
     }
 }
