@@ -30,4 +30,16 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route ('product.index');
     }
+
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        return view('product.edit', compact('product'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $product->update($request->all());
+        return redirect()->route('product.index');
+    }
 }

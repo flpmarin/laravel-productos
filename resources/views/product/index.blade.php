@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Productos</title>
 </head>
 <body>
-    <a href="/create">agregar productos</a>
+    <a href="{{ route('product.create')}}">agregar productos</a>
 
     <h1>Productos:</h1>
     <ul>
@@ -20,6 +20,7 @@
                 <form action="{{ route ('product.destroy', $product->id)}}" method="post">
                     @method("DELETE")
                     @csrf
+                    <a href="{{ route ('product.edit', $product->id)}}">✏️</a>
                     <input type="submit" value="🗑️" />
                 </form>
             </li>
