@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
 
-<body>
+<div class="contenedor">
     <a href={{ route('product.index')}}>volver</a>
     <h1>agregar productos</h1>
     <form action="{{ route('product.store')}}" method="post">
@@ -11,5 +11,5 @@
         <input type="number" name="price" placeholder="price"/>     
         <input type="submit" value="agregar producto" /> 
     </form>
-    
+</div>
 @endsection
