@@ -17,8 +17,6 @@
             padding: 10px;
             gap: 10px;
             border-radius: 5px;
-            height: 600px;
-
         }
 
         li{
@@ -28,6 +26,10 @@
             padding: 20px;
             width: 150px;
             margin: 20px;
+        }
+
+        .error{
+            color: red;
         }
         
         

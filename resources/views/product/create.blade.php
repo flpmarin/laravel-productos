@@ -11,5 +11,8 @@
         <input type="number" name="price" placeholder="price"/>     
         <input type="submit" value="agregar producto" /> 
     </form>
+    @error('name')
+    <p class="error">{{ $message}}</p>
+    @enderror
 </div>
 @endsection
